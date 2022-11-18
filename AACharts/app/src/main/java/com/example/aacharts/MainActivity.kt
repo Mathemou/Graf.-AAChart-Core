@@ -12,22 +12,46 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val aaChartView = findViewById<AAChartView>(R.id.aa_chart_view)
 
-        val aaChartModel : AAChartModel = AAChartModel()
-            .chartType(AAChartType.Pie)
-            .title("Problemas")
-            .subtitle("Veículos com problemas nos últimos 30 dias")
-            .backgroundColor("#b6c0dd")
-            .dataLabelsEnabled(true)
-            .series(arrayOf(
-                AASeriesElement()
-                    .name("Torta")
-                    .data(arrayOf(7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6))
-
-            )
-            )
-
-        aaChartView.aa_drawChartWithChartModel(aaChartModel)
+//
+//
+//
+//        val outubroNovembroGuiguer : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
+//
+//        val aaChartViewGuiguer = findViewById<AAChartView>(R.id.grafico_horas_outubro_guiguer)
+//
+//        val aaChartModelGuiguer : AAChartModel = AAChartModel()
+//            .chartType(AAChartType.Area)
+//            .title("Horas trabalhadas por dia")
+//            .subtitle("Média de 4 horas por dia")
+//            .backgroundColor("#b6c0dd")
+//            .dataLabelsEnabled(false)
+//            .series(arrayOf(
+//                AASeriesElement()
+//                    .name("Horas")
+//                    .data(outubroNovembroGuiguer)
+//            )
+//            )
+//
+//        aaChartViewGuiguer.aa_drawChartWithChartModel(aaChartModelGuiguer)
+//
+//        val Vendas : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
+//
+//        val aaChartViewVendas = findViewById<AAChartView>(R.id.vendas)
+//
+//        val aaChartModelVendas : AAChartModel = AAChartModel()
+//            .chartType(AAChartType.Area)
+//            .title("Horas trabalhadas por dia")
+//            .subtitle("Média de 4 horas por dia")
+//            .backgroundColor("#b6c0dd")
+//            .dataLabelsEnabled(false)
+//            .series(arrayOf(
+//                AASeriesElement()
+//                    .name("Horas")
+//                    .data(Vendas)
+//            )
+//            )
+//
+//        aaChartViewVendas.aa_drawChartWithChartModel(aaChartModelVendas)
     }
 }
