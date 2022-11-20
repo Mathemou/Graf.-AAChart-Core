@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.aacharts.Util.Util
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
@@ -26,18 +27,7 @@ class GraficoHorasMaradona : Fragment() {
         val outubroNovembroMaradona : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
         val aaChartViewMaradona = view?.findViewById<AAChartView>(R.id.grafico_horas_outubro_maradona)
 
-        val aaChartModelMaradona : AAChartModel = AAChartModel()
-            .chartType(AAChartType.Area)
-            .title("Horas do Maradona trabalhadas")
-            .subtitle("Média de 4 horas por dia")
-            .backgroundColor("#b6c0dd")
-            .dataLabelsEnabled(false)
-            .series(arrayOf(
-                AASeriesElement()
-                    .name("Horas")
-                    .data(outubroNovembroMaradona)
-            )
-            )
+        val aaChartModelMaradona = Util.gerarModelGraficoArea(outubroNovembroMaradona, "Horas Maradona", "Horas por dia no mês de outubro", "#b6c0dd", false)
 
         aaChartViewMaradona?.aa_drawChartWithChartModel(aaChartModelMaradona)
 

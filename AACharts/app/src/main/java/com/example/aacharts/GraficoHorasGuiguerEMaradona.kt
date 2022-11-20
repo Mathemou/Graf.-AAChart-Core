@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.aacharts.Util.Util
+import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
 
 
 private const val ARG_PARAM1 = "param1"
@@ -27,12 +29,16 @@ class GraficoHorasGuiguerEMaradona : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(
-            R.layout.fragment_grafico_horas_guiguer_e_maradona,
-            container,
-            false
-        )
+
+        val view = inflater.inflate(R.layout.fragment_grafico_horas_guiguer_e_maradona, container, false)
+        val aaChartViewGuiguer = view?.findViewById<AAChartView>(R.id.grafico_horas_outubro_guiguer_e_maradona)
+        val horasGuiguer : Array<Any> = arrayOf(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
+        val horasMaradona : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
+
+        val aaChartModel = Util.gerarModelGraficoAreaDuplo(horasGuiguer, horasMaradona, "Horas Guiguer e Maradona", "Comparativo de horas trabalhadas por Guiguer e Maradona", "#b6c0dd", false)
+
+        aaChartViewGuiguer?.aa_drawChartWithChartModel(aaChartModel)
+        return view
     }
 
     companion object {
