@@ -11,11 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar"
+        android:theme="@style/Theme.AACharts"
         tools:targetApi="31">
 
         <activity
-            android:name=".ActivityDeTeste"
+            android:name=".TelaInicial"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

@@ -27,7 +27,7 @@ class GraficoHorasMaradona : Fragment() {
         val outubroNovembroMaradona : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
         val aaChartViewMaradona = view?.findViewById<AAChartView>(R.id.grafico_horas_outubro_maradona)
 
-        val aaChartModelMaradona = Util.gerarModelGraficoArea(outubroNovembroMaradona, "Horas Maradona", "Horas por dia no mês de outubro", "#b6c0dd", false)
+        val aaChartModelMaradona = Util.gerarModelGraficoArea(outubroNovembroMaradona, "Horas Maradona", "Horas por dia no mês de outubro", "#b6c0dd", false, "#ED8545")
 
         aaChartViewMaradona?.aa_drawChartWithChartModel(aaChartModelMaradona)
 

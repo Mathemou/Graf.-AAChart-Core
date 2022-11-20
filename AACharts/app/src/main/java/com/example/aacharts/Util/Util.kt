@@ -8,7 +8,7 @@ import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
 
 class Util {
     companion object {
-        public fun gerarModelGraficoArea(array: Array<Any>, titulo : String, subtitulo : String, background : String, label : Boolean): AAChartModel {
+        public fun gerarModelGraficoArea(array: Array<Any>, titulo : String, subtitulo : String, background : String, label : Boolean, grafColor : String): AAChartModel {
 
             val aaChartModel: AAChartModel = AAChartModel()
                 .chartType(AAChartType.Area)
@@ -21,6 +21,7 @@ class Util {
                         AASeriesElement()
                             .name("Horas")
                             .data(array)
+                            .color(grafColor)
                     )
                 )
 
@@ -33,7 +34,9 @@ class Util {
             titulo: String,
             subtitulo: String,
             background: String,
-            label: Boolean
+            label: Boolean,
+            graf1Color : String,
+            graf2Color : String
         ): AAChartModel {
             val aaChartModel: AAChartModel = AAChartModel()
                 .chartType(AAChartType.Area)
@@ -45,10 +48,12 @@ class Util {
                     arrayOf(
                         AASeriesElement()
                             .name("Guiguer")
-                            .data(array1),
+                            .data(array1)
+                            .color(graf1Color),
                         AASeriesElement()
                             .name("Maradona")
                             .data(array2)
+                            .color(graf2Color)
                     )
 
                 )

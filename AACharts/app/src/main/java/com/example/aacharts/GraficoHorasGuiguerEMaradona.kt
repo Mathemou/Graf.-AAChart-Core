@@ -35,7 +35,7 @@ class GraficoHorasGuiguerEMaradona : Fragment() {
         val horasGuiguer : Array<Any> = arrayOf(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
         val horasMaradona : Array<Any> = arrayOf(0, 0, 0, 4, 8.5, 2.5, 9, 0, 1, 2, 2, 4, 2.5, 7.5, 0, 3.5, 0, 4, 5, 6.5, 4, 0, 7, 8, 0, 0, 2, 0, 0, 0, 0)
 
-        val aaChartModel = Util.gerarModelGraficoAreaDuplo(horasGuiguer, horasMaradona, "Horas Guiguer e Maradona", "Comparativo de horas trabalhadas por Guiguer e Maradona", "#b6c0dd", false)
+        val aaChartModel = Util.gerarModelGraficoAreaDuplo(horasGuiguer, horasMaradona, "Horas Guiguer e Maradona", "Comparativo de horas trabalhadas por Guiguer e Maradona", "#b6c0dd", false, "#F6CB1C", "#ED8545")
 
         aaChartViewGuiguer?.aa_drawChartWithChartModel(aaChartModel)
         return view
