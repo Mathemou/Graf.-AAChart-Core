@@ -43,8 +43,8 @@ class GraficoGraficos : Fragment() {
         val numDeLinhas = 3
         val numDeTortas = 1
         var array : Array<Any> = arrayOf()
-        array = addElemento(array,3)
-        array = addElemento(array,1)
+        array = addElemento(array, arrayOf("Torta", 1))
+        array = addElemento(array,arrayOf("Linha", 3))
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Pie)
             .title("Grafico de gráficos")
@@ -55,9 +55,8 @@ class GraficoGraficos : Fragment() {
             .series(
                 arrayOf(
                     AASeriesElement()
-                        .innerSize("50%")
                         .data(array)
-
+                        .name("Número de gráficos")
                 )
 
             )
@@ -66,7 +65,7 @@ class GraficoGraficos : Fragment() {
         return view
     }
 
-    fun addElemento(array : Array<Any>, num : Int) : Array<Any>{
+    fun addElemento(array : Array<Any>, num : Any) : Array<Any>{
         val mutableList = array.toMutableList()
         mutableList.add(num)
         return mutableList.toTypedArray()
