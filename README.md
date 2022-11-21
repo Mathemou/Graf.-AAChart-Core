@@ -1,5 +1,7 @@
 # Gráficos AAChart Core
 
+> Este repositório tem como objetivo servir de intridução e teste para o framework open-source AACharts, bem como realizar uma implementação do componente ViewPager2 com FragmentStateAdapter para exibição de múltiplos fragmentos em uma atividade.
+
 ## 🤝 Colaborador
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
