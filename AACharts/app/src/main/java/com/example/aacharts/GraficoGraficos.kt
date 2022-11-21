@@ -42,13 +42,14 @@ class GraficoGraficos : Fragment() {
 
         val numDeLinhas = 3
         val numDeTortas = 1
+        val numDeBarra = 1
         var array : Array<Any> = arrayOf()
-        array = addElemento(array, arrayOf("Torta", 1))
-        array = addElemento(array,arrayOf("Linha", 3))
+        array = addElemento(array, arrayOf("Torta", numDeTortas))
+        array = addElemento(array,arrayOf("Linha", numDeLinhas))
+        array = addElemento(array,arrayOf("Barra", numDeBarra))
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Pie)
             .title("Grafico de gráficos")
-            .zoomType(AAChartZoomType.XY)
             .subtitle("Relação de gráficos presentes no projeto")
             .backgroundColor("#b6c0dd")
             .dataLabelsEnabled(true)
@@ -71,15 +72,6 @@ class GraficoGraficos : Fragment() {
         return mutableList.toTypedArray()
     }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GraficoGraficos.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             GraficoGraficos().apply {

@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(GraficoHorasMaradona())
         adapter.addFragment(GraficoHorasGuiguer())
         adapter.addFragment(GraficoHorasGuiguerEMaradona())
+        adapter.addFragment(GraficoSO())
         adapter.addFragment(GraficoGraficos())
         viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         viewPager2.adapter = adapter
