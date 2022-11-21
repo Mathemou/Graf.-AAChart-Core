@@ -60,5 +60,25 @@ class Util {
 
             return aaChartModel
         }
+
+        fun gerarGraficoPie(array : Array<Any>, titulo : String, subtitulo : String, background : String, label : Boolean, grafColor : String) : AAChartModel {
+            val aaChartModel: AAChartModel = AAChartModel()
+                .chartType(AAChartType.Pie)
+                .title(titulo)
+                .subtitle(subtitulo)
+                .backgroundColor(background)
+                .dataLabelsEnabled(label)
+                .series(
+                    arrayOf(
+                        AASeriesElement()
+                            .name("Info1")
+                            .data(array)
+                            .color(grafColor)
+                    )
+
+                )
+
+            return aaChartModel
+        }
     }
 }
