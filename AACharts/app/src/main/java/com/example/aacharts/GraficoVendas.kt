@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
+import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
+import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,16 +21,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class GraficoVendas : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -34,19 +32,44 @@ class GraficoVendas : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grafico_vendas, container, false)
+        val view =  inflater.inflate(R.layout.fragment_grafico_vendas, container, false)
+        val aaChartView = view?.findViewById<AAChartView>(R.id.grafico_vendas)
+        val aaChartModel : AAChartModel = AAChartModel()
+            .chartType(AAChartType.Columnrange)
+            .backgroundColor("#b6c0dd")
+            .series(arrayOf(
+                AASeriesElement()
+                    .data(arrayOf(
+                        arrayOf("20/03", 0, 19.24),
+                        arrayOf("21/03", 19.24, 33.85),
+                        arrayOf("22/03", 33.95, 0),
+                        arrayOf("23/03", 0, 53.28),
+                        arrayOf("24/03", 53.28, 0),
+                        arrayOf("25/03", 0, 53.28),
+                        arrayOf("26/03", 53.28, 159.84)
+                    ))
+                    .allowPointSelect(false)
+                    .name("Vendas"),
+                AASeriesElement()
+                    .data(arrayOf(
+                        arrayOf("20/03", 0, 1),
+                        arrayOf("21/03", 1, 3),
+                        arrayOf("22/03", 3, 2),
+                        arrayOf("23/03", 2, 0.28),
+                        arrayOf("24/03", 0.28, 0),
+                        arrayOf("25/03", 0, 5.60),
+                        arrayOf("26/03", 5.60, 0)
+                    ))
+                    .allowPointSelect(false)
+                    .name("Gasto com cliques")
+
+            ))
+            .yAxisTitle("Variação")
+        aaChartView?.aa_drawChartWithChartModel(aaChartModel)
+        return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GraficoVendas.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             GraficoVendas().apply {

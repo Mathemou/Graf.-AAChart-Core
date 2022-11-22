@@ -20,16 +20,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class GraficoGraficos : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -43,10 +37,14 @@ class GraficoGraficos : Fragment() {
         val numDeLinhas = 3
         val numDeTortas = 1
         val numDeBarra = 1
+        val numDeVela = 1
         var array : Array<Any> = arrayOf()
+
         array = addElemento(array, arrayOf("Torta", numDeTortas))
         array = addElemento(array,arrayOf("Linha", numDeLinhas))
         array = addElemento(array,arrayOf("Barra", numDeBarra))
+        array = addElemento(array,arrayOf("Vela", numDeVela))
+
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Pie)
             .backgroundColor("#b6c0dd")
@@ -57,7 +55,6 @@ class GraficoGraficos : Fragment() {
                         .data(array)
                         .name("Número de gráficos")
                 )
-
             )
             .zoomType(AAChartZoomType.XY)
         AAChartView?.aa_drawChartWithChartModel(aaChartModel)

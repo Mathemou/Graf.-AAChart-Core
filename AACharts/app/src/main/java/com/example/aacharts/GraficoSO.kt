@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.aachartmodel.aainfographics.aachartcreator.*
+import com.github.aachartmodel.aainfographics.aatools.AAColor
 
 private const val ARG_PARAM1 = "param1"
 class GraficoSO : Fragment() {
@@ -21,35 +22,48 @@ class GraficoSO : Fragment() {
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_grafico_s_o, container, false)
         val aaChartView = view?.findViewById<AAChartView>(R.id.grafico_so)
-        val array : Array<Any> = arrayOf(arrayOf("Linux", 4), arrayOf("Windows", 2), arrayOf("Mac", 1))
+        val soNames = arrayOf(
+            "Linux",
+            "Mac",
+            "Windows"
+        )
+
+        val colorsArr = arrayOf<Any>(
+            AAColor.Green,
+            AAColor.Cyan,
+            AAColor.Blue,
+            AAColor.Purple,
+            AAColor.Gray,
+            AAColor.DarkGray,
+            AAColor.LightGray,
+            AAColor.Magenta,
+            AAColor.Brown,
+            AAColor.Black,
+        )
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Bar)
-            .title("Grafico de SO")
-            .subtitle("Comparação de SO's usados na Update")
             .backgroundColor("#b6c0dd")
             .dataLabelsEnabled(false)
+            .categories(soNames)
+            .colorsTheme(colorsArr)
             .series(
                 arrayOf(
                     AASeriesElement()
                         .data(arrayOf(
-                            5
+                            arrayOf("Linux", 4),
+                            arrayOf("Mac", 1),
+                            arrayOf("Windows", 2)
                         ))
-                        .name("Tesla"),
+                        .colorByPoint(true)
+                        .name("Usuários"),
                     AASeriesElement()
                         .data(arrayOf(
-                            1
+                            arrayOf("Linux", 10),
+                            arrayOf("Mac", 2),
+                            arrayOf("Windows", 0)
                         ))
-                        .name("Mac"),
-                    AASeriesElement()
-                        .data(arrayOf(
-                            2
-                        ))
-                        .name("Windows"),
-                    AASeriesElement()
-                        .data(arrayOf(
-                            4
-                        ))
-                        .name("Linux")
+                        .colorByPoint(true)
+                        .name("Haters")
                 )
             )
             .zoomType(AAChartZoomType.XY)
