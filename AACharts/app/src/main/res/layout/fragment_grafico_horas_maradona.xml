@@ -5,11 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="20dp">
     <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
         android:id="@+id/grafico_horas_outubro_maradona"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

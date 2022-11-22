@@ -49,8 +49,6 @@ class GraficoGraficos : Fragment() {
         array = addElemento(array,arrayOf("Barra", numDeBarra))
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Pie)
-            .title("Grafico de gráficos")
-            .subtitle("Relação de gráficos presentes no projeto")
             .backgroundColor("#b6c0dd")
             .dataLabelsEnabled(true)
             .series(
@@ -61,7 +59,7 @@ class GraficoGraficos : Fragment() {
                 )
 
             )
-
+            .zoomType(AAChartZoomType.XY)
         AAChartView?.aa_drawChartWithChartModel(aaChartModel)
         return view
     }

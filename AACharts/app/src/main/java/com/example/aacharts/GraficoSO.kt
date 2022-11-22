@@ -5,14 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
+import com.github.aachartmodel.aainfographics.aachartcreator.*
 
 private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class GraficoSO : Fragment() {
 
 
@@ -36,17 +31,29 @@ class GraficoSO : Fragment() {
             .series(
                 arrayOf(
                     AASeriesElement()
-                        .data(arrayOf("Linux", 4))
-                        .name("Linux"),
+                        .data(arrayOf(
+                            5
+                        ))
+                        .name("Tesla"),
                     AASeriesElement()
-                        .data(arrayOf("Windows", 2))
+                        .data(arrayOf(
+                            1
+                        ))
+                        .name("Mac"),
+                    AASeriesElement()
+                        .data(arrayOf(
+                            2
+                        ))
                         .name("Windows"),
                     AASeriesElement()
-                        .data(arrayOf("Mac", 1))
-                        .name("Mac"),
+                        .data(arrayOf(
+                            4
+                        ))
+                        .name("Linux")
                 )
-
             )
+            .zoomType(AAChartZoomType.XY)
+            .yAxisTitle("Número de usuários")
         aaChartView?.aa_drawChartWithChartModel(aaChartModel)
         return view
     }
@@ -62,3 +69,5 @@ class GraficoSO : Fragment() {
             }
     }
 }
+private const val ARG_PARAM2 = "param2"
+

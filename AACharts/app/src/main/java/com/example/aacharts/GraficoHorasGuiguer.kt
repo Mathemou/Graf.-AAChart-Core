@@ -31,7 +31,7 @@ class GraficoHorasGuiguer : Fragment() {
         val aaChartViewGuiguer = view?.findViewById<AAChartView>(R.id.grafico_horas_outubro_guiguer)
         val horasGuiguer : Array<Any> = arrayOf(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
 
-        val aaChartModel = Util.gerarModelGraficoArea(horasGuiguer, "Horas Guiguer", "Horas trabalhadas por Guiguer no mês de novembro", "#b6c0dd", false, "#F6CB1C")
+        val aaChartModel = Util.gerarModelGraficoArea(horasGuiguer, "Guiguer", "#b6c0dd", false, "#F6CB1C")
 
         aaChartViewGuiguer?.aa_drawChartWithChartModel(aaChartModel)
         return view
